@@ -1,0 +1,137 @@
+table Dim_Date
+	lineageTag: cc1e567b-221a-498c-988e-0338440e1aae
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: b72b3e34-14e9-491d-8b80-ee1628188254
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: d4ac3a39-c0cf-426a-b089-c4a208cc5c15
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 4a5fbf4c-18a8-4658-9ff6-a3a98d65f987
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: 2050d406-055a-4e44-b26c-9b992861f1f1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		lineageTag: d3431b42-9b3c-4953-b1a9-aeb9258d2f67
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Name]
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Short'
+		lineageTag: f8cdbe33-84db-4ca8-94bb-16b32e1a2ec3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Short]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		formatString: 0
+		lineageTag: 5e5851c6-cbe0-4274-a569-d3dfe80a8b45
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		lineageTag: f9d486c4-e04c-4c8a-983c-ad53991f32d6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day Name]
+		sortByColumn: 'Day Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Number'
+		formatString: 0
+		lineageTag: 8fd5976b-8092-42a7-a5ec-84db3446e9d5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hour
+		formatString: 0
+		lineageTag: 9a22e0fc-2b04-474e-88db-ae4c40c9aaee
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Hour]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: 5b0019da-ce02-42fc-ada7-719c04fdd6c2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year-Month]
+		sortByColumn: 'Year-Month Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month Sort'
+		formatString: 0
+		lineageTag: f7600540-57c0-47bd-8761-3b28637a2532
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year-Month Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS(
+				    CALENDAR(
+				        MIN('Cybersecurity_attacks'[Timestamp]),
+				        MAX('Cybersecurity_attacks'[Timestamp])
+				    ),
+				    "Year", YEAR([Date]),
+				    "Quarter", "Q" & FORMAT([Date], "Q"),
+				    "Month Number", MONTH([Date]),
+				    "Month Name", FORMAT([Date], "MMMM"),
+				    "Month Short", FORMAT([Date], "MMM"),
+				    "Day", DAY([Date]),
+				    "Day Name", FORMAT([Date], "dddd"),
+				    "Day Number", WEEKDAY([Date], 2),
+				    "Hour", HOUR([Date]),
+				    "Year-Month", FORMAT([Date], "yyyy-MM"),
+				    "Year-Month Sort", YEAR([Date]) * 100 + MONTH([Date])
+				)
+				
+				```
+
+	annotation PBI_Id = 4d1fb775efce47d5b65f9470b9b09851
+

@@ -1,0 +1,14 @@
+relationship 3e3ccd27-a582-4ed3-9fd8-07d0629e30ef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Cybersecurity_attacks.Timestamp
+	toColumn: LocalDateTable_aebb13ab-5fe0-4a9e-bd69-41be9cc223e6.Date
+
+relationship a627a2ac-7d1a-45d4-a40e-d1c803a9fc68
+	joinOnDateBehavior: datePartOnly
+	fromColumn: QA_ExactDuplicates.Timestamp
+	toColumn: LocalDateTable_1fbf258a-5e90-4d5f-9b98-7ead95927118.Date
+
+relationship cd27cd76-034d-4e3f-56f4-09973776dcd5
+	fromColumn: Cybersecurity_attacks.Date
+	toColumn: Dim_Date.Date
+

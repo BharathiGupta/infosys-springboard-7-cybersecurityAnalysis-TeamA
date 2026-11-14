@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Cybersecurity_attacks","QA_ExactDuplicates"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Cybersecurity_attacks
+ref table DateTableTemplate_9089be16-cb6f-4731-bb23-350a7abc7936
+ref table LocalDateTable_aebb13ab-5fe0-4a9e-bd69-41be9cc223e6
+ref table QA_ExactDuplicates
+ref table LocalDateTable_1fbf258a-5e90-4d5f-9b98-7ead95927118
+ref table Dim_Date
+
+ref cultureInfo en-US
+

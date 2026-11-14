@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Cybersecurity_TeamA_projectt"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c5183ba6-567b-42cb-bf53-025f178f6e96"
+  }
+}

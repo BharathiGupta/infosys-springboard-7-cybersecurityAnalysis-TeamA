@@ -1,0 +1,414 @@
+table Cybersecurity_attacks
+	lineageTag: 7113f0d4-7338-43ef-bd05-59f8599ea541
+
+	measure 'Total Incidents' =
+			
+			COUNTROWS('Cybersecurity_attacks')
+		formatString: 0
+		lineageTag: c25afb0a-7378-4025-a73b-0f79a350caa1
+
+	measure 'Average Anomaly Score' =
+			
+			AVERAGE('Cybersecurity_attacks'[Anomaly Scores])
+		lineageTag: ea7280ae-6aba-4c9c-b026-8d965011b4c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Maximum Anomaly Score' =
+			
+			MAX('Cybersecurity_attacks'[Anomaly Scores])
+		lineageTag: 727a10a5-df3e-4284-985f-211b771be878
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Unique Source IPs' =
+			
+			DISTINCTCOUNT('Cybersecurity_attacks'[Source IP Address])
+		formatString: 0
+		lineageTag: b157b6c9-c1bd-41d3-8949-b33cd43da7f2
+
+	measure 'Unique Destination IPs' =
+			
+			DISTINCTCOUNT('Cybersecurity_attacks'[Destination IP Address])
+		formatString: 0
+		lineageTag: 46697bda-79ed-41f7-ad11-a01f7de0f3f5
+
+	measure 'Total Attack Types' =
+			
+			DISTINCTCOUNT('Cybersecurity_attacks'[Attack Type])
+		formatString: 0
+		lineageTag: 405caed5-b1b4-41be-9e85-40f110b73685
+
+	measure 'High Severity Incidents' =
+			
+			CALCULATE(
+			    [Total Incidents],
+			    'Cybersecurity_attacks'[Severity Level] = "High"
+			)
+		formatString: 0
+		lineageTag: 48c87c24-7698-4943-86d2-5aaad5f06b86
+
+	measure 'Medium Severity Incidents' =
+			
+			CALCULATE(
+			    [Total Incidents],
+			    'Cybersecurity_attacks'[Severity Level] = "Medium"
+			)
+		formatString: 0
+		lineageTag: 40a78a46-253a-4b59-a667-514edb2c0200
+
+	measure 'Low Severity Incidents' =
+			
+			CALCULATE(
+			    [Total Incidents],
+			    'Cybersecurity_attacks'[Severity Level] = "Low"
+			)
+		formatString: 0
+		lineageTag: 4b56344b-e34e-4fdf-b5d1-987e64e40c1c
+
+	measure 'High Severity Percentage' =
+			
+			DIVIDE(
+			    [High Severity Incidents],
+			    [Total Incidents],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 46660470-bbf7-493a-8c09-287f3f130132
+
+	column Timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 83df2dcd-f1cf-49c8-96f6-cc4ffad68d2a
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		variation Variation
+			isDefault
+			relationship: 3e3ccd27-a582-4ed3-9fd8-07d0629e30ef
+			defaultHierarchy: LocalDateTable_aebb13ab-5fe0-4a9e-bd69-41be9cc223e6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source IP Address'
+		dataType: string
+		lineageTag: 9c68f88b-75c2-4cf0-8280-ff9c42bd232d
+		summarizeBy: none
+		sourceColumn: Source IP Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination IP Address'
+		dataType: string
+		lineageTag: f98ebc60-741f-4780-a9da-ae0301128f49
+		summarizeBy: none
+		sourceColumn: Destination IP Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Port'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a70de1b-d61c-497e-8b69-a49c33a94292
+		summarizeBy: sum
+		sourceColumn: Source Port
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination Port'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d2fdf65-a7df-451f-bcc4-182f3751e233
+		summarizeBy: sum
+		sourceColumn: Destination Port
+
+		annotation SummarizationSetBy = Automatic
+
+	column Protocol
+		dataType: string
+		lineageTag: 693c08fa-95e6-42a4-a310-a3e8ffffbd78
+		summarizeBy: none
+		sourceColumn: Protocol
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packet Length'
+		dataType: int64
+		formatString: 0
+		lineageTag: df60afc2-fa41-4510-badf-e97cc4d2f31f
+		summarizeBy: sum
+		sourceColumn: Packet Length
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Cybersecurity_attacks","TableItemName":"Packet Length (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Packet Type'
+		dataType: string
+		lineageTag: 67670f45-636b-43ae-92d6-b3a14bb0b232
+		summarizeBy: none
+		sourceColumn: Packet Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Traffic Type'
+		dataType: string
+		lineageTag: 543d1da7-2a45-4cdb-967f-3220c6185a8c
+		summarizeBy: none
+		sourceColumn: Traffic Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payload Data'
+		dataType: string
+		lineageTag: 72cc9953-8e5b-44be-bbf6-d6bad060c34b
+		summarizeBy: none
+		sourceColumn: Payload Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Malware Indicators'
+		dataType: string
+		lineageTag: 3a9719b5-2d72-4e5d-8dfe-595893725cf8
+		summarizeBy: none
+		sourceColumn: Malware Indicators
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anomaly Scores'
+		dataType: double
+		lineageTag: 31b71347-16bc-46b8-83c4-f79ffb3ba4b8
+		summarizeBy: sum
+		sourceColumn: Anomaly Scores
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Cybersecurity_attacks","TableItemName":"Anomaly Scores (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Alerts/Warnings
+		dataType: string
+		lineageTag: d447241f-f7ec-42c5-a089-a4e49640f31c
+		summarizeBy: none
+		sourceColumn: Alerts/Warnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attack Type'
+		dataType: string
+		lineageTag: 5132d886-b0b5-40b9-a12a-dcdca339781b
+		summarizeBy: none
+		sourceColumn: Attack Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attack Signature'
+		dataType: string
+		lineageTag: 1d4fb714-142f-48d9-b74e-0f89ea13c0bd
+		summarizeBy: none
+		sourceColumn: Attack Signature
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action Taken'
+		dataType: string
+		lineageTag: c3bab6c8-6727-4c71-af1f-51c98f4f69c4
+		summarizeBy: none
+		sourceColumn: Action Taken
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Severity Level'
+		dataType: string
+		lineageTag: b098d414-5ba4-4cf7-b1c0-f7aa49e069b9
+		summarizeBy: none
+		sourceColumn: Severity Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Information'
+		dataType: string
+		lineageTag: 5ad45f7d-1bbc-4ea9-af83-2aec98888ef1
+		summarizeBy: none
+		sourceColumn: User Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Device Information'
+		dataType: string
+		lineageTag: 2be8c035-7097-4cd9-991c-e4191133f0a6
+		summarizeBy: none
+		sourceColumn: Device Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Network Segment'
+		dataType: string
+		lineageTag: 5db7b068-78ed-48b2-857a-e8ce104b3b44
+		summarizeBy: none
+		sourceColumn: Network Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Geo-location Data'
+		dataType: string
+		lineageTag: 5bd32b14-1882-4b05-b545-dc148f125385
+		summarizeBy: none
+		sourceColumn: Geo-location Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proxy Information'
+		dataType: string
+		lineageTag: 237d5708-84da-4d98-a301-da936af437a3
+		summarizeBy: none
+		sourceColumn: Proxy Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Firewall Logs'
+		dataType: string
+		lineageTag: 6a62f3a5-e995-496a-ba25-b219b5fc6f20
+		summarizeBy: none
+		sourceColumn: Firewall Logs
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IDS/IPS Alerts'
+		dataType: string
+		lineageTag: 4f9e2628-88cf-43eb-81e2-1a5bdbdc34d4
+		summarizeBy: none
+		sourceColumn: IDS/IPS Alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Log Source'
+		dataType: string
+		lineageTag: f091cc1c-6a59-4e40-ac3e-1be45548ec6e
+		summarizeBy: none
+		sourceColumn: Log Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date =
+			
+			DATE(
+			    YEAR('Cybersecurity_attacks'[Timestamp]),
+			    MONTH('Cybersecurity_attacks'[Timestamp]),
+			    DAY('Cybersecurity_attacks'[Timestamp])
+			)
+		formatString: Long Date
+		lineageTag: 4e0700e3-7215-4f8f-9142-9711ddef4f1d
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Incident Hour' =
+			
+			HOUR('Cybersecurity_attacks'[Timestamp])
+		formatString: 0
+		lineageTag: 7d281349-dd33-4b4f-8c34-305594ab32f6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anomaly Scores (bins)' =
+			IF(
+				ISBLANK('Cybersecurity_attacks'[Anomaly Scores]),
+				BLANK(),
+				IF(
+					'Cybersecurity_attacks'[Anomaly Scores] >= 0,
+					ROUNDDOWN('Cybersecurity_attacks'[Anomaly Scores] / 10, 0) * 10,
+					ROUNDUP('Cybersecurity_attacks'[Anomaly Scores] / 10, 0) * 10
+				)
+			)
+		lineageTag: d00c16ca-450b-4e66-bc52-1692d522ab9f
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Cybersecurity_attacks"
+				          }
+				        },
+				        "Property": "Anomaly Scores"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 10.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"c","Entity":"Cybersecurity_attacks"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"Anomaly Scores"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"Anomaly Scores"}},"Size":10.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Packet Length (bins)' =
+			IF(
+				ISBLANK('Cybersecurity_attacks'[Packet Length]),
+				BLANK(),
+				INT('Cybersecurity_attacks'[Packet Length] / 100) * 100
+			)
+		formatString: 0
+		lineageTag: f0823181-f6ac-4a1d-ac67-900bddd5aca0
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Cybersecurity_attacks"
+				          }
+				        },
+				        "Property": "Packet Length"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 100.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"c","Entity":"Cybersecurity_attacks"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"Packet Length"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"c"}},"Property":"Packet Length"}},"Size":100.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cybersecurity_attacks = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Bharati Gupta\Downloads\cybersecurity_attacks (1).csv"),[Delimiter=",", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", type datetime}, {"Source IP Address", type text}, {"Destination IP Address", type text}, {"Source Port", Int64.Type}, {"Destination Port", Int64.Type}, {"Protocol", type text}, {"Packet Length", Int64.Type}, {"Packet Type", type text}, {"Traffic Type", type text}, {"Payload Data", type text}, {"Malware Indicators", type text}, {"Anomaly Scores", type number}, {"Alerts/Warnings", type text}, {"Attack Type", type text}, {"Attack Signature", type text}, {"Action Taken", type text}, {"Severity Level", type text}, {"User Information", type text}, {"Device Information", type text}, {"Network Segment", type text}, {"Geo-location Data", type text}, {"Proxy Information", type text}, {"Firewall Logs", type text}, {"IDS/IPS Alerts", type text}, {"Log Source", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Firewall Logs", Text.Trim, type text}, {"Proxy Information", Text.Trim, type text}, {"IDS/IPS Alerts", Text.Trim, type text}, {"Alerts/Warnings", Text.Trim, type text}, {"Malware Indicators", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Firewall Logs", Text.Clean, type text}, {"Proxy Information", Text.Clean, type text}, {"IDS/IPS Alerts", Text.Clean, type text}, {"Alerts/Warnings", Text.Clean, type text}, {"Malware Indicators", Text.Clean, type text}})
+				in
+				    #"Cleaned Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

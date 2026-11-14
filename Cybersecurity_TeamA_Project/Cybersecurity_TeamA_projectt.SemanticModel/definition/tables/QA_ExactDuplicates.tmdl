@@ -1,0 +1,227 @@
+table QA_ExactDuplicates
+	lineageTag: a090060e-c9ac-467a-a30a-ca6ec86d74fb
+
+	column Timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ca821090-dd7e-46de-986c-9b32d4dab67a
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		variation Variation
+			isDefault
+			relationship: a627a2ac-7d1a-45d4-a40e-d1c803a9fc68
+			defaultHierarchy: LocalDateTable_1fbf258a-5e90-4d5f-9b98-7ead95927118.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source IP Address'
+		dataType: string
+		lineageTag: 84a45520-4af0-4061-adfc-a8f78025b51a
+		summarizeBy: none
+		sourceColumn: Source IP Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination IP Address'
+		dataType: string
+		lineageTag: b62ecf52-d69b-4be2-8c5d-ba5b2e111aea
+		summarizeBy: none
+		sourceColumn: Destination IP Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Port'
+		dataType: int64
+		formatString: 0
+		lineageTag: 22fb4fdb-0c79-4a45-8c3a-7923503f5ab3
+		summarizeBy: sum
+		sourceColumn: Source Port
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Destination Port'
+		dataType: int64
+		formatString: 0
+		lineageTag: e2ba5320-9ccd-4855-8276-f51900f9dd99
+		summarizeBy: sum
+		sourceColumn: Destination Port
+
+		annotation SummarizationSetBy = Automatic
+
+	column Protocol
+		dataType: string
+		lineageTag: 5f221c86-85a5-4913-83e2-91dbf7bd7d98
+		summarizeBy: none
+		sourceColumn: Protocol
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packet Length'
+		dataType: int64
+		formatString: 0
+		lineageTag: 712a6e34-27c8-404b-8ba2-1264cf519f03
+		summarizeBy: sum
+		sourceColumn: Packet Length
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packet Type'
+		dataType: string
+		lineageTag: 36531309-a9fe-48e3-8744-92948b990426
+		summarizeBy: none
+		sourceColumn: Packet Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Traffic Type'
+		dataType: string
+		lineageTag: 65a765ee-a7a0-4adc-b944-f991ee5ed9d8
+		summarizeBy: none
+		sourceColumn: Traffic Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payload Data'
+		dataType: string
+		lineageTag: 7c75c858-ce98-4824-bda9-d553fb01fdac
+		summarizeBy: none
+		sourceColumn: Payload Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Malware Indicators'
+		dataType: string
+		lineageTag: 29f31cf0-49e5-4fef-b5b0-9347db1e74bc
+		summarizeBy: none
+		sourceColumn: Malware Indicators
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anomaly Scores'
+		dataType: double
+		lineageTag: 1917270e-473f-4922-a86a-bbbfa754c149
+		summarizeBy: sum
+		sourceColumn: Anomaly Scores
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Alerts/Warnings
+		dataType: string
+		lineageTag: 9472fa06-5239-469b-afaf-d00c6d24823e
+		summarizeBy: none
+		sourceColumn: Alerts/Warnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attack Type'
+		dataType: string
+		lineageTag: 2475daa9-dc3e-451d-b521-88e51925a583
+		summarizeBy: none
+		sourceColumn: Attack Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attack Signature'
+		dataType: string
+		lineageTag: ea3a002f-c7ae-4ca6-a778-00a953341903
+		summarizeBy: none
+		sourceColumn: Attack Signature
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action Taken'
+		dataType: string
+		lineageTag: f81a12cd-0ccd-4019-8171-ef556b135fcb
+		summarizeBy: none
+		sourceColumn: Action Taken
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Severity Level'
+		dataType: string
+		lineageTag: 96f74114-00dc-4301-9d3d-e489154d2e93
+		summarizeBy: none
+		sourceColumn: Severity Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Information'
+		dataType: string
+		lineageTag: 5fed67db-a912-44d8-9bfa-3240245a5b9c
+		summarizeBy: none
+		sourceColumn: User Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Device Information'
+		dataType: string
+		lineageTag: d9685255-dd2f-4b5c-9142-f9ce473d726f
+		summarizeBy: none
+		sourceColumn: Device Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Network Segment'
+		dataType: string
+		lineageTag: 62548d57-6853-4c68-80f5-5ff596a59a7f
+		summarizeBy: none
+		sourceColumn: Network Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Geo-location Data'
+		dataType: string
+		lineageTag: 58432f47-ba80-43a1-b524-7de97b6f34a1
+		summarizeBy: none
+		sourceColumn: Geo-location Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proxy Information'
+		dataType: string
+		lineageTag: eb0eac86-83d7-4241-9418-0778b47a3862
+		summarizeBy: none
+		sourceColumn: Proxy Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Firewall Logs'
+		dataType: string
+		lineageTag: 488f7ccf-e53e-4ee7-af86-7362469a6b7a
+		summarizeBy: none
+		sourceColumn: Firewall Logs
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IDS/IPS Alerts'
+		dataType: string
+		lineageTag: 59746cc7-45e3-42be-b700-d80b2cc492e6
+		summarizeBy: none
+		sourceColumn: IDS/IPS Alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Log Source'
+		dataType: string
+		lineageTag: cd08247f-ea52-4bda-b1a6-669a983e3527
+		summarizeBy: none
+		sourceColumn: Log Source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition QA_ExactDuplicates = m
+		mode: import
+		source =
+				let
+				    Source = Cybersecurity_attacks,
+				    #"Kept Duplicates" = let columnNames = {"Timestamp", "Source IP Address", "Destination IP Address", "Source Port", "Destination Port", "Protocol", "Packet Length", "Packet Type", "Traffic Type", "Payload Data", "Malware Indicators", "Anomaly Scores", "Alerts/Warnings", "Attack Type", "Attack Signature", "Action Taken", "Severity Level", "User Information", "Device Information", "Network Segment", "Geo-location Data", "Proxy Information", "Firewall Logs", "IDS/IPS Alerts", "Log Source"}, addCount = Table.Group(Source, columnNames, {{"Count", Table.RowCount, type number}}), selectDuplicates = Table.SelectRows(addCount, each [Count] > 1), removeCount = Table.RemoveColumns(selectDuplicates, "Count") in Table.Join(Source, columnNames, removeCount, columnNames, JoinKind.Inner)
+				in
+				    #"Kept Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
