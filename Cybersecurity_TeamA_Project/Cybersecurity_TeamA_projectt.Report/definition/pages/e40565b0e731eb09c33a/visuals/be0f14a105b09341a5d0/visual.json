@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "14d49ec6e751acb1a070",
+  "name": "be0f14a105b09341a5d0",
   "position": {
-    "x": 10.869565217391305,
-    "y": 95.65217391304347,
-    "z": 1000,
-    "height": 128.26086956521738,
-    "width": 293.47826086956519,
-    "tabOrder": 1000
+    "x": 14.457831325301205,
+    "y": 8.4337349397590362,
+    "z": 1,
+    "height": 100,
+    "width": 232.53012048192772,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "cardVisual",
@@ -148,6 +148,13 @@
                   "Value": "0D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           },
           "selector": {
@@ -195,7 +202,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -203,6 +210,32 @@
               "expr": {
                 "Literal": {
                   "Value": "'Unique Source Ports'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }
