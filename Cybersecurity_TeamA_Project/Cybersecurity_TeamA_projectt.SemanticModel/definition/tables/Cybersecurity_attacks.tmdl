@@ -401,7 +401,7 @@ table Cybersecurity_attacks
 		source =
 				let
 				    Source = Csv.Document(File.Contents("C:\Users\Bharati Gupta\Downloads\cybersecurity_attacks.csv"),[Delimiter=",", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-					
+				
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", type datetime}, {"Source IP Address", type text}, {"Destination IP Address", type text}, {"Source Port", Int64.Type}, {"Destination Port", Int64.Type}, {"Protocol", type text}, {"Packet Length", Int64.Type}, {"Packet Type", type text}, {"Traffic Type", type text}, {"Payload Data", type text}, {"Malware Indicators", type text}, {"Anomaly Scores", type number}, {"Alerts/Warnings", type text}, {"Attack Type", type text}, {"Attack Signature", type text}, {"Action Taken", type text}, {"Severity Level", type text}, {"User Information", type text}, {"Device Information", type text}, {"Network Segment", type text}, {"Geo-location Data", type text}, {"Proxy Information", type text}, {"Firewall Logs", type text}, {"IDS/IPS Alerts", type text}, {"Log Source", type text}}),
 				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Firewall Logs", Text.Trim, type text}, {"Proxy Information", Text.Trim, type text}, {"IDS/IPS Alerts", Text.Trim, type text}, {"Alerts/Warnings", Text.Trim, type text}, {"Malware Indicators", Text.Trim, type text}}),
@@ -411,5 +411,5 @@ table Cybersecurity_attacks
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

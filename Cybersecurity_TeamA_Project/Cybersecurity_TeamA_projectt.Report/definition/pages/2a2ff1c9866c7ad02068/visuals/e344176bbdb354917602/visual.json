@@ -269,42 +269,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a044106dc702ee0b1204",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cybersecurity_attacks"
-              }
-            },
-            "Property": "IDS/IPS Alerts"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "662e7b2616a04110402d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Cybersecurity_attacks"
-                  }
-                },
-                "Property": "IDS/IPS Alerts"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

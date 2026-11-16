@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "2c5e65f15a7420749a71",
   "position": {
-    "x": 21.955476641149769,
-    "y": 20.58325935107791,
+    "x": 22.093085974649046,
+    "y": 20.930291975983305,
     "z": 3000,
-    "height": 82.333037404311639,
-    "width": 750.6028576693077,
+    "height": 88.372343898596185,
+    "width": 743.02536514740734,
     "tabOrder": 3000
   },
   "visual": {
@@ -19,22 +19,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "       ",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "24pt",
-                      "color": "#17334a"
-                    }
-                  },
-                  {
                     "value": "ATTACK PATTERN & SOURCE ANALYSIS",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "24pt",
+                      "textDecoration": "underline",
                       "color": "#ffffff"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }
@@ -55,7 +49,18 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "8D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#114D7E'"
+                    }
+                  }
                 }
               }
             }
@@ -90,7 +95,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#3674AC'"
+                      "Value": "'#114D7E'"
                     }
                   }
                 }
