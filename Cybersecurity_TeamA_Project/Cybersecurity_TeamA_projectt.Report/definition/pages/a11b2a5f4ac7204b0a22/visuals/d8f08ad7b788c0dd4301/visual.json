@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "d8f08ad7b788c0dd4301",
   "position": {
-    "x": 1043.0262168031682,
-    "y": 76.74440391193879,
+    "x": 1043.0379746835442,
+    "y": 77.215189873417714,
     "z": 2000,
-    "height": 136.04689784389149,
-    "width": 227.90762373848489,
+    "height": 97.468354430379748,
+    "width": 227.84810126582278,
     "tabOrder": 2000
   },
   "visual": {
@@ -124,6 +124,13 @@
                   "Value": "11D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           },
           "selector": {
@@ -159,6 +166,45 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average Anamoly Scores'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

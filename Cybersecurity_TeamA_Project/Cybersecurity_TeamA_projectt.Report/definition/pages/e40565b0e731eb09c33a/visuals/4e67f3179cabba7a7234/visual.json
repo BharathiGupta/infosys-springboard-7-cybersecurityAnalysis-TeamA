@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "4e67f3179cabba7a7234",
   "position": {
-    "x": 255.42168674698797,
-    "y": 8.4337349397590362,
+    "x": 251.35135135135135,
+    "y": 14.864864864864865,
     "z": 0,
-    "height": 85.5421686746988,
-    "width": 753.01204819277109,
+    "height": 86.486486486486484,
+    "width": 763,
     "tabOrder": 0
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Network Traffic & Communication Analysis",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "24pt",
                       "textDecoration": "underline",
                       "color": "#ffffff"
                     }

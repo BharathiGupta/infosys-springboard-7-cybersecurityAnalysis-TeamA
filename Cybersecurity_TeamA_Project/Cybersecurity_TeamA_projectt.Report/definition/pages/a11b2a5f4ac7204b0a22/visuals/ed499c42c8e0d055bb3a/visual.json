@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ed499c42c8e0d055bb3a",
   "position": {
-    "x": 824.42094505400917,
-    "y": 76.74440391193879,
+    "x": 824.05063291139231,
+    "y": 77.215189873417714,
     "z": 1000,
-    "height": 136.04689784389149,
-    "width": 212.79130175583029,
+    "height": 97.468354430379748,
+    "width": 212.65822784810126,
     "tabOrder": 1000
   },
   "visual": {
@@ -119,6 +119,13 @@
                   "Value": "11D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           },
           "selector": {
@@ -188,6 +195,45 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'High Severity Incidents'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

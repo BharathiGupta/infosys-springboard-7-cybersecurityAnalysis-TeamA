@@ -22,7 +22,7 @@
                     "value": "Security Risk & Response Analysis",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "24pt",
                       "textDecoration": "underline",
                       "color": "#ffffff"
                     }

@@ -22,7 +22,7 @@
                     "value": " ",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "24pt",
                       "color": "#ffffff"
                     }
                   },
@@ -30,7 +30,7 @@
                     "value": "Threat & Network Analysis",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "24pt",
                       "textDecoration": "underline",
                       "color": "#ffffff"
                     }

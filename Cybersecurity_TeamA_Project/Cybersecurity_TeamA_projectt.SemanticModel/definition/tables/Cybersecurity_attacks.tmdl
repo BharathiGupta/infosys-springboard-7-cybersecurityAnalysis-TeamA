@@ -76,6 +76,11 @@ table Cybersecurity_attacks
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 46660470-bbf7-493a-8c09-287f3f130132
 
+	measure 'Actual Row Count' =
+			
+			FORMAT(COUNTROWS('Cybersecurity_attacks'), "#,##0")
+		lineageTag: 71a2fb9b-4d19-4229-82e5-380e49d26b94
+
 	column Timestamp
 		dataType: dateTime
 		formatString: General Date
