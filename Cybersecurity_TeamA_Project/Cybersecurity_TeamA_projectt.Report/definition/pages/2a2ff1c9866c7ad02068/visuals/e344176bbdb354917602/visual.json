@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Cybersecurity_attacks"
-                        }
-                      },
-                      "Property": "IDS/IPS Alerts"
+                    "SourceRef": {
+                      "Entity": "Cybersecurity_attacks"
                     }
                   },
-                  "Function": 5
+                  "Property": "Total Incidents"
                 }
               },
-              "queryRef": "CountNonNull(Cybersecurity_attacks.IDS/IPS Alerts)",
-              "nativeQueryRef": "Count of IDS/IPS Alerts"
+              "queryRef": "Cybersecurity_attacks.Total Incidents",
+              "nativeQueryRef": "Total Incidents"
             }
           ]
         }
@@ -60,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Cybersecurity_attacks"
-                      }
-                    },
-                    "Property": "IDS/IPS Alerts"
+                  "SourceRef": {
+                    "Entity": "Cybersecurity_attacks"
                   }
                 },
-                "Function": 5
+                "Property": "Total Incidents"
               }
             },
             "direction": "Descending"
@@ -343,25 +333,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d38f4c3aa84639987b90",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Cybersecurity_attacks"
-                  }
-                },
-                "Property": "IDS/IPS Alerts"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

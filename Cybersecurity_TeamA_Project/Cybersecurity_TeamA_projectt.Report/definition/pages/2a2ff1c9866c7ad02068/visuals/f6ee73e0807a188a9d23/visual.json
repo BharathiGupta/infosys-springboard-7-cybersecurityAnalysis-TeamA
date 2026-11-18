@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Cybersecurity_attacks"
-                        }
-                      },
-                      "Property": "Firewall Logs"
+                    "SourceRef": {
+                      "Entity": "Cybersecurity_attacks"
                     }
                   },
-                  "Function": 5
+                  "Property": "Total Incidents"
                 }
               },
-              "queryRef": "CountNonNull(Cybersecurity_attacks.Firewall Logs)",
-              "nativeQueryRef": "Count of Firewall Logs"
+              "queryRef": "Cybersecurity_attacks.Total Incidents",
+              "nativeQueryRef": "Total Incidents"
             }
           ]
         }
@@ -60,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Cybersecurity_attacks"
-                      }
-                    },
-                    "Property": "Firewall Logs"
+                  "SourceRef": {
+                    "Entity": "Cybersecurity_attacks"
                   }
                 },
-                "Function": 5
+                "Property": "Total Incidents"
               }
             },
             "direction": "Descending"
@@ -378,25 +368,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "37771947c242e780966e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Cybersecurity_attacks"
-                  }
-                },
-                "Property": "Firewall Logs"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
