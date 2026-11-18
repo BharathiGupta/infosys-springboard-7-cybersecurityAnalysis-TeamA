@@ -1,30 +1,82 @@
-Team-A Guidelines – Cybersecurity Threat Analytics Project
+#  Cyber Threat Analytics Platform with Incident Visualization System
 
-Milestone 3 – Dashboard Development
-Page 3 – Bharathi Gupta
-Network Traffic & Communication Analysis
-1. Unique Source Ports – KPI Card
-2. Unique Destination Ports – KPI Card
-3. Incident Distribution by Traffic Type – Donut Chart
-4. Incident Distribution by Log Source – Bar Chart
-5. Top 10 Source Ports – Bar Chart
-6. Top 10 Destination Ports – Bar Chart
-7. Traffic Type by Protocol – Stacked Column Chart
-Page 4 – Shiva Sumedha
-Attack Pattern & Source Analysis
-1. Total Attack Signatures – KPI Card
-2. Total Network Segments – KPI Card
-3. Top 10 Source IP Addresses – Bar Chart
-4. Top 10 Destination IP Addresses – Bar Chart
-5. Attack Type by Network Segment – Stacked Column Chart
-6. Top Attack Signatures – Bar Chart
-7. Incident Distribution by Device Information – Bar Chart
-Page 5 – Gowshika
-Security Risk & Response Analysis
-1. Incidents with Security Alerts – KPI Card
-2. Incidents with Malware Indicators – KPI Card
-3. Severity Distribution by Action Taken – Stacked Column Chart
-4. Average Anomaly Score by Severity Level – Column Chart
-5. High Severity Incidents by Log Source – Bar Chart
-6. Incident Distribution by IDS/IPS Alerts – Bar Chart
-7. Incident Distribution by Firewall Logs – Bar Chart
+An interactive cybersecurity analytics and visualization platform developed using **Microsoft Power BI** to analyze security incidents, identify threat patterns, monitor severity levels, and uncover potential risks through data-driven insights.
+
+**Project:** Infosys Springboard Virtual Internship 7.0  
+**Batch:** 4  
+**Domain:** Cybersecurity | Data Analytics | Business Intelligence  
+**Tool:** Microsoft Power BI
+
+---
+
+##  Project Overview
+
+The Cyber Threat Analytics Platform transforms raw cybersecurity incident data into meaningful insights through data cleaning, analysis, and interactive visualizations.
+
+The project focuses on analyzing cybersecurity incidents based on attack types, severity levels, timestamps, network behavior, and anomaly scores.
+
+Through interactive dashboards, users can explore incident distributions, identify emerging threat patterns, compare risk levels, and better understand cybersecurity trends.
+
+##  Project Objectives
+
+- Analyze cybersecurity incidents based on threat severity and attack categories.
+- Identify patterns and trends in reported security incidents.
+- Examine anomaly scores and network behavior.
+- Compare incident distributions across different categories.
+- Transform raw datasets into meaningful analytical insights.
+- Develop interactive and user-friendly Power BI dashboards.
+
+##  Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Microsoft Power BI | Dashboard development and visualization |
+| Power Query | Data cleaning and transformation |
+| DAX | Calculated measures and KPIs |
+| CSV / Excel | Dataset management |
+| Data Analytics | Incident analysis and insights |
+
+##  Key Dashboard Features
+
+- **KPI Cards:** Provide an overview of important cybersecurity metrics.
+- **Threat Severity Analysis:** Examine incidents across different severity levels.
+- **Incident Distribution:** Analyze the distribution of different attack types.
+- **Trend Analysis:** Identify changes in cybersecurity incidents over time.
+- **Anomaly Analysis:** Examine unusual patterns through anomaly scores.
+- **Network Behaviour Analysis:** Explore network-related incident characteristics.
+- **Interactive Filters:** Explore data using slicers and dynamic filters.
+- **Visual Insights:** Present complex cybersecurity data through interactive charts and graphs.
+
+##  Data Preparation & Preprocessing
+
+The initial milestone focuses on preparing the cybersecurity dataset for reliable analysis using Power Query in Microsoft Power BI.
+
+Key preprocessing activities include:
+
+- Data type validation and correction.
+- Missing value identification and handling.
+- Duplicate record verification.
+- Outlier identification and anomaly score validation.
+- Date and time formatting.
+- Categorical value standardization.
+- Text cleaning and consistency checks.
+- Column renaming and feature creation.
+- Final data quality validation.
+
+---
+
+##  Project Structure
+
+The repository contains project-related files, dashboard resources, and documentation for the Infosys Springboard Virtual Internship 7.0.
+
+##  Team Members
+
+- Bharathi Gupta
+- Shiva Sumedha
+- Gowshika
+- G Gayathri
+- Aemi Patel
+
+---
+
+**Developed as part of Infosys Springboard Virtual Internship 7.0 – Batch 4.**
