@@ -264,7 +264,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 Destination Ports by Incident Count'"
+                  "Value": "'Incident Volume by Destination Port (Top 10)'"
                 }
               }
             },

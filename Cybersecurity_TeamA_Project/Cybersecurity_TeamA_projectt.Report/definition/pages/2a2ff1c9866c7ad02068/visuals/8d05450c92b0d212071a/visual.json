@@ -281,7 +281,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'High Serverity Incidents by Log Source'"
+                  "Value": "'High-Severity Incidents by Log Source'"
                 }
               }
             },

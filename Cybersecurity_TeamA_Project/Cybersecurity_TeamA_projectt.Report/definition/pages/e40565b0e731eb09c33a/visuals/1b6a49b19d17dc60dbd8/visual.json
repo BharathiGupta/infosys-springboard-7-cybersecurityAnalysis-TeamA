@@ -374,7 +374,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Traffic Type by Protocol'"
+                  "Value": "'Traffic Type Across Network Protocols'"
                 }
               }
             },

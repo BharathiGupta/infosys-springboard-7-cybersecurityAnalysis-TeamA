@@ -215,7 +215,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Incident Distribution by Device Information'"
+                  "Value": "'Incidents by Device Type'"
                 }
               }
             },

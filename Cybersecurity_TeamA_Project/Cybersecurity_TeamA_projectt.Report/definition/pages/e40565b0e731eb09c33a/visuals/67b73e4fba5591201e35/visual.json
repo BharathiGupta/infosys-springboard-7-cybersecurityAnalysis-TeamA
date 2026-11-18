@@ -345,7 +345,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Incident Distribution by Log Source'"
+                  "Value": "'Incidents by Log Source'"
                 }
               }
             },

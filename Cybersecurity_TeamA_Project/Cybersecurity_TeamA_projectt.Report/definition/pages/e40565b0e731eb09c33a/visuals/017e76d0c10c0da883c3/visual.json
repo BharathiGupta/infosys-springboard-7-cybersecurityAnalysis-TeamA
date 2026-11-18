@@ -302,7 +302,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Incident Distribution by Traffic Type'"
+                  "Value": "'Incidents by Traffic Type'"
                 }
               }
             },

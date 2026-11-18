@@ -452,7 +452,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Action Taken by Severity Level'"
+                  "Value": "'Average Anomaly Score by Severity'"
                 }
               }
             },
