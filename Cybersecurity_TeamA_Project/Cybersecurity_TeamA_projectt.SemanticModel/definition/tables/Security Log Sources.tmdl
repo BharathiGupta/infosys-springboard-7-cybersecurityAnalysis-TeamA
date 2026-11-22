@@ -1,0 +1,37 @@
+table 'Security Log Sources'
+	lineageTag: d2f02954-9636-41bb-9e87-29f0a00b0c84
+
+	measure 'Incidents by Log Source' =
+			
+			SWITCH(
+			    SELECTEDVALUE('Security Log Sources'[Log Source]),
+			    "IDS/IPS Alerts",
+			        COUNTA('Cybersecurity_attacks'[IDS/IPS Alerts]),
+			    "Firewall Logs",
+			        COUNTA('Cybersecurity_attacks'[Firewall Logs])
+			)
+		formatString: 0
+		lineageTag: 626ac95f-aa42-48d6-a211-c14c330ce3c5
+
+	column 'Log Source'
+		lineageTag: 64c63598-c2e3-4694-a1c1-a0090e999fc6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Log Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Security Log Sources' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Log Source", STRING,
+				    {
+				        {"IDS/IPS Alerts"},
+				        {"Firewall Logs"}
+				    }
+				)
+
+	annotation PBI_Id = 502c5fbc1d5746d2827e97d4b112c22d
+

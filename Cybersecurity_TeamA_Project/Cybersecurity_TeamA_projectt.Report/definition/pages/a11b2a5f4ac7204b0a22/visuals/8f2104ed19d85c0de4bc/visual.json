@@ -330,23 +330,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5a8448d63b312ee20bdd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cybersecurity_attacks"
-              }
-            },
-            "Property": "Total Incidents"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

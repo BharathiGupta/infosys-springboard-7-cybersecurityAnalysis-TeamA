@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "e344176bbdb354917602",
+  "name": "23af55bd90297749b0d5",
   "position": {
-    "x": 390.54054054054052,
-    "y": 213.51351351351352,
-    "z": 5000,
-    "height": 250,
-    "width": 422.97297297297297,
-    "tabOrder": 5000
+    "x": 740.90909090909088,
+    "y": 123.86363636363636,
+    "z": 10000,
+    "height": 288.63636363636363,
+    "width": 529.5454545454545,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Cybersecurity_attacks"
+                      "Entity": "Security Log Sources"
                     }
                   },
-                  "Property": "IDS/IPS Alerts"
+                  "Property": "Log Source"
                 }
               },
-              "queryRef": "Cybersecurity_attacks.IDS/IPS Alerts",
-              "nativeQueryRef": "IDS/IPS Alerts",
+              "queryRef": "Security Log Sources.Log Source",
+              "nativeQueryRef": "Log Source",
               "active": true
             }
           ]
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Cybersecurity_attacks"
+                      "Entity": "Security Log Sources"
                     }
                   },
-                  "Property": "Total Incidents"
+                  "Property": "Incidents by Log Source"
                 }
               },
-              "queryRef": "Cybersecurity_attacks.Total Incidents",
-              "nativeQueryRef": "Total Incidents"
+              "queryRef": "Security Log Sources.Incidents by Log Source",
+              "nativeQueryRef": "Incidents by Log Source"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Cybersecurity_attacks"
+                    "Entity": "Security Log Sources"
                   }
                 },
-                "Property": "Total Incidents"
+                "Property": "Incidents by Log Source"
               }
             },
             "direction": "Descending"
@@ -71,41 +71,10 @@
       }
     },
     "objects": {
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#2878B5'"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
       "categoryAxis": [
         {
           "properties": {
             "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "titleBold": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -121,6 +90,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "titleBold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -142,13 +118,6 @@
       "valueAxis": [
         {
           "properties": {
-            "titleBold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "bold": {
               "expr": {
                 "Literal": {
@@ -168,6 +137,13 @@
                 }
               }
             },
+            "titleBold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "titleColor": {
               "solid": {
                 "color": {
@@ -179,20 +155,99 @@
                   }
                 }
               }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
             }
           }
         }
       ],
-      "labels": [
+      "dataPoint": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#8064A2'"
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Security Log Sources"
+                          }
+                        },
+                        "Property": "Log Source"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Firewall Logs'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Security Log Sources"
+                          }
+                        },
+                        "Property": "Log Source"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'IDS/IPS Alerts'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]
@@ -201,20 +256,6 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Incident Distribution by IDS/IPS  Alerts'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "15D"
-                }
-              }
-            },
             "bold": {
               "expr": {
                 "Literal": {
@@ -231,6 +272,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Incidents by Security Log Source'"
                 }
               }
             }
@@ -271,69 +319,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c7cb215d007e06a85ddb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Cybersecurity_attacks"
-              }
-            },
-            "Property": "IDS/IPS Alerts"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "Cybersecurity_attacks",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "c"
-                          }
-                        },
-                        "Property": "IDS/IPS Alerts"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Alert Data'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {}
-            }
-          ]
-        }
-      }
-    ]
   }
 }

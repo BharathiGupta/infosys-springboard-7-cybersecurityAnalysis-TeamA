@@ -18,6 +18,7 @@ ref table LocalDateTable_aebb13ab-5fe0-4a9e-bd69-41be9cc223e6
 ref table QA_ExactDuplicates
 ref table LocalDateTable_1fbf258a-5e90-4d5f-9b98-7ead95927118
 ref table Dim_Date
+ref table 'Security Log Sources'
 
 ref cultureInfo en-US
 

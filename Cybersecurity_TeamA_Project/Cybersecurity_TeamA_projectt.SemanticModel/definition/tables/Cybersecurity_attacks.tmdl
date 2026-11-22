@@ -81,6 +81,18 @@ table Cybersecurity_attacks
 			FORMAT(COUNTROWS('Cybersecurity_attacks'), "#,##0")
 		lineageTag: 71a2fb9b-4d19-4229-82e5-380e49d26b94
 
+	measure 'Security Log Records' =
+			
+			COUNTROWS(
+			    FILTER(
+			        'Cybersecurity_attacks',
+			        NOT ISBLANK('Cybersecurity_attacks'[IDS/IPS Alerts])
+			            || NOT ISBLANK('Cybersecurity_attacks'[Firewall Logs])
+			    )
+			)
+		formatString: 0
+		lineageTag: 6e1ea4d9-3c58-4c76-8d19-fdbcfc9eadb5
+
 	column Timestamp
 		dataType: dateTime
 		formatString: General Date
